@@ -1,0 +1,16 @@
+/* src/components/partials/dashboard/HeaderStyle/sub-header.css */
+.sunlight-morning {
+    background: linear-gradient(to bottom, #FFDDC1, #FFABAB);
+}
+
+.sunlight-afternoon {
+    background: linear-gradient(to bottom, #FFD700, #FFA500);
+}
+
+.sunlight-evening {
+    background: linear-gradient(to bottom, #FF4500, #FF6347);
+}
+
+.sunlight-night {
+    background: linear-gradient(to bottom, #2C3E50, #4CA1AF);
+}
