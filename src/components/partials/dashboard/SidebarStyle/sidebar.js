@@ -102,10 +102,15 @@ const Sidebar = memo((props) => {
                 className={` ${sidebarColor} ${sidebarType.join(" ")} ${sidebarMenuStyle} ${sidebarHide.join(" ") ? 'sidebar-none' : 'sidebar'}   sidebar-base  `}
                 data-sidebar="responsive"
             >
-                <div className="sidebar-header d-flex align-items-center justify-content-start">
+                <div className="d-flex align-items-center justify-content-start">
                     <Link to={getRoleLink(role)} className="navbar-brand">
-                        <Logo />
-                        <h4 className="logo-title">{props.app_name}</h4>
+                    <img className=""
+                            src="../GrLogo.png" 
+                            alt=""
+                            style={{ width: "180px" }}
+                        />
+                        {/* <Logo /> */}
+                        {/* <h4 className="logo-title">{props.app_name}</h4> */}
                     </Link>
                     <div
                         className="sidebar-toggle"

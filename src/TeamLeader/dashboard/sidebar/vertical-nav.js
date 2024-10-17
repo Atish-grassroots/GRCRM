@@ -30,7 +30,7 @@ const VerticalNav = memo((props) => {
             <Accordion as="ul" className="navbar-nav iq-main-menu">
                 <li className="nav-item static-item">
                     <Link className="nav-link static-item disabled" to="#" tabIndex="-1">
-                        <span className="default-icon">Home</span>
+                        <span className="default-icon">Home111</span>
                         <span className="mini-icon">-</span>
                     </Link>
                 </li>
