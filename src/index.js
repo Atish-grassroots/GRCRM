@@ -12,7 +12,7 @@ import { store } from "./store";
 import SignIn from "./auth/sign-in";
 // import Index from "./SuperAdmin/index";
 import { IndexRouters } from "./router";
-import { SimpleRouter } from "./router/simple-router";
+// import { SimpleRouter } from "./router/simple-router";
 import { DefaultRouter } from "./router/default-router";
 
 const router = createBrowserRouter([
@@ -22,7 +22,7 @@ const router = createBrowserRouter([
   },
   ...DefaultRouter,
   ...IndexRouters,
-  ...SimpleRouter
+  // ...SimpleRouter
 ] ,{basename: process.env.PUBLIC_URL });
 
 ReactDOM.createRoot(document.getElementById("root")).render(
