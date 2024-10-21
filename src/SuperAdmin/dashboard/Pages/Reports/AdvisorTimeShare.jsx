@@ -111,11 +111,9 @@ const AdvisorTimeShare = () => {
                         </div>
                     </div>
                 </Card.Header>
-                <hr className="px-2" />
-                <Card.Body>
+                <Card.Body className="p-0">
                     <Row>
                         <Col sm="12">
-                            <Card>
                                 <Card.Body>
                                     <div className="table-responsive border-bottom my-1 ">
                                         <Table
@@ -254,7 +252,6 @@ const AdvisorTimeShare = () => {
                                         </Row>
                                     </div>
                                 </Card.Body>
-                            </Card>
                         </Col>
                     </Row>
                 </Card.Body>

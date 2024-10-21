@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import CustomToggle from '../../../dropdowns'
 
 //Horizontal-nav
-import HorizontalNav from '../HeaderStyle/horizontal-nav'
+import HorizontalNav from './horizontal-nav'
 
 //img 
 import flag1 from '../../../../assets/images/Flag/flag001.png'

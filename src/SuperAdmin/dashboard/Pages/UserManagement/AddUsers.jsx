@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 import avatars1 from '../../../../assets/images/avatars/01.png'
 import Card from '../../../../components/Card'
 
-const ManageTeamLead =() =>{
+const AddUsers =() =>{
   return(
       <>
         <div>
@@ -166,4 +166,4 @@ const ManageTeamLead =() =>{
 
 }
 
-export default ManageTeamLead;
+export default AddUsers;

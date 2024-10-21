@@ -14,7 +14,7 @@ import Header from "../../components/partials/dashboard/HeaderStyle/header";
 import SubHeader from "../../components/partials/dashboard/HeaderStyle/sub-header";
 
 //sidebar
-import Sidebar from "../../components/partials/dashboard/SidebarStyle/sidebar";
+import Sidebar from "../../TeamLeader/TeamLeadSidebar/sidebar";
 
 //footer
 import Footer from "../../components/partials/dashboard/FooterStyle/footer";

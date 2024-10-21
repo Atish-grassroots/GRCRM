@@ -114,7 +114,6 @@ const OutBoundReport = () => {
                 <Card.Body className="p-0">
                     <Row>
                         <Col sm="12">
-                            <Card>
                                 <Card.Body>
                                     <div className="table-responsive border-bottom my-3">
                                         <Table
@@ -253,7 +252,6 @@ const OutBoundReport = () => {
                                         </Row>
                                     </div>
                                 </Card.Body>
-                            </Card>
                         </Col>
                     </Row>
                 </Card.Body>

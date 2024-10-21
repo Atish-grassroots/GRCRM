@@ -1,282 +1,169 @@
-import React from "react";
-import { Button, Card, Col, Form, Row } from "react-bootstrap";
+import React from 'react'
+import {Row,Col,Image,Form,Button} from 'react-bootstrap'
 
-const AddAdmin = () => {
-  return (
-    <>
-      {" "}
-      <Card>
-        <Card.Header className="pb-3">
-          <div className="d-flex justify-content-between">
-            <h5 className="mb-0">Manage Admin</h5>
-          </div>
-        </Card.Header>
-        <Card.Body className="p-0">
-          <Row>
-            <Col sm="12">
-              <Card>
-                <Card.Body>
-                  <Form className="p-2">
-                    <div
-                      className="p-field-container"
-                      style={{
-                        display: "flex",
-                        gap: "1rem",
-                        flexWrap: "wrap",
-                      }}>
-                      <div className="p-field" style={{ flex: "1 1 45%" }}>
-                        <Form.Group className="form-group">
-                          <Form.Label htmlFor="exampleInputEmail3">
-                            Employee ID
-                          </Form.Label>
-                          <Form.Control
-                            type="text"
-                            id="text"
-                            placeholder="Enter Employee ID"
-                          />
-                        </Form.Group>
-                      </div>
+import {Link} from 'react-router-dom'
+// img
+import avatars1 from '../../../../assets/images/avatars/01.png'
+import Card from '../../../../components/Card'
 
-                      <div className="p-field" style={{ flex: "1 1 45%" }}>
-                        <Form.Group className="form-group">
-                          <Form.Label htmlFor="exampleInputText1">
-                            User Name{" "}
-                          </Form.Label>
-                          <Form.Control
-                            type="text"
-                            id="userName"
-                            placeholder="Enter Name"
-                          />
-                        </Form.Group>
-                      </div>
-                    </div>
+const AddAdmin =() =>{
+  return(
+      <>
+        <div>
+            <Row>
+               <Col xl="3" lg="4" className="">
+                  <Card>
+                     <Card.Header className="d-flex justify-content-between">
+                        <div className="header-title">
+                           <h4 className="card-title">Add New User</h4>
+                        </div>
+                     </Card.Header>
+                     <Card.Body>
+                        <Form>
+                           <Form.Group className="form-group">
+                              <div className="profile-img-edit position-relative">
+                                 <Image className="theme-color-default-img  profile-pic rounded avatar-100" src={avatars1} alt="profile-pic"/>
+                                 <div className="upload-icone bg-primary">
+                                    <svg className="upload-button" width="14" height="14" viewBox="0 0 24 24">
+                                       <path fill="#ffffff" d="M14.06,9L15,9.94L5.92,19H5V18.08L14.06,9M17.66,3C17.41,3 17.15,3.1 16.96,3.29L15.13,5.12L18.88,8.87L20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18.17,3.09 17.92,3 17.66,3M14.06,6.19L3,17.25V21H6.75L17.81,9.94L14.06,6.19Z" />
+                                    </svg>
+                                    <Form.Control className="file-upload" type="file" accept="image/*"/>
+                                 </div>
+                              </div>
+                              <div className="img-extension mt-3">
+                                 <div className="d-inline-block align-items-center">
+                                    <span>Only</span>{' '}
+                                    <Link to="#">.jpg</Link>{' '}
+                                    <Link to="#">.png</Link>{' '}
+                                    <Link to="#">.jpeg</Link>{' '}
+                                    <span>allowed</span>
+                                 </div>
+                              </div>
+                           </Form.Group>
+                           <Form.Group className="form-group">
+                              <Form.Label>User Role:</Form.Label>
+                              <select name="type" className="selectpicker form-control" data-style="py-0">
+                                 <option>Select</option>
+                                 <option>Web Designer</option>
+                                 <option>Web Developer</option>
+                                 <option>Tester</option>
+                                 <option>Php Developer</option>
+                                 <option>Ios Developer </option>
+                              </select>
+                           </Form.Group>
+                           <Form.Group className="form-group">
+                              <Form.Label htmlFor="furl">Facebook Url:</Form.Label>
+                              <Form.Control type="text"  id="furl" placeholder="Facebook Url"/>
+                           </Form.Group>
+                           <Form.Group className="form-group">
+                              <Form.Label htmlFor="turl">Twitter Url:</Form.Label>
+                              <Form.Control type="text"  id="turl" placeholder="Twitter Url"/>
+                           </Form.Group>
+                           <Form.Group className="form-group">
+                              <Form.Label htmlFor="instaurl">Instagram Url:</Form.Label>
+                              <Form.Control type="text"  id="instaurl" placeholder="Instagram Url"/>
+                           </Form.Group>
+                           <Form.Group className="mb-0 form-group">
+                              <Form.Label htmlFor="lurl">Linkedin Url:</Form.Label>
+                              <Form.Control type="text"  id="lurl" placeholder="Linkedin Url"/>
+                           </Form.Group>
+                        </Form>
+                     </Card.Body>
+                  </Card>
+               </Col>
+               <Col xl="9" lg="8">
+                  <Card>
+                     <Card.Header className="d-flex justify-content-between">
+                        <div className="header-title">
+                           <h4 className="card-title">New User Information</h4>
+                        </div>
+                     </Card.Header>
+                     <Card.Body>
+                        <div className="new-user-info">
+                           <form>
+                              <div className="row">
+                                 <Form.Group className="col-md-6 form-group">
+                                    <Form.Label htmlFor="fname">First Name:</Form.Label>
+                                    <Form.Control type="text"  id="fname" placeholder="First Name"/>
+                                 </Form.Group>
+                                 <Form.Group className="col-md-6 form-group">
+                                    <Form.Label htmlFor="lname">Last Name:</Form.Label>
+                                    <Form.Control type="text"  id="lname" placeholder="Last Name"/>
+                                 </Form.Group>
+                                 <Form.Group className="col-md-6 form-group">
+                                    <Form.Label htmlFor="add1">Street Address 1:</Form.Label>
+                                    <Form.Control type="text"  id="add1" placeholder="Street Address 1"/>
+                                 </Form.Group>
+                                 <Form.Group className="col-md-6 form-group">
+                                    <Form.Label htmlFor="add2">Street Address 2:</Form.Label>
+                                    <Form.Control type="text"  id="add2" placeholder="Street Address 2"/>
+                                 </Form.Group>
+                                 <Form.Group className="col-md-12 form-group">
+                                    <Form.Label htmlFor="cname">Company Name:</Form.Label>
+                                    <Form.Control type="text"  id="cname" placeholder="Company Name"/>
+                                 </Form.Group>
+                                 <Form.Group className="col-sm-12 form-group">
+                                    <Form.Label>Country:</Form.Label>
+                                    <select name="type" className="selectpicker form-control" data-style="py-0">
+                                       <option>Select Country</option>
+                                       <option>Caneda</option>
+                                       <option>Noida</option>
+                                       <option >USA</option>
+                                       <option>India</option>
+                                       <option>Africa</option>
+                                    </select>
+                                 </Form.Group>
+                                 <Form.Group className="col-md-6  form-group">
+                                    <Form.Label htmlFor="mobno">Mobile Number:</Form.Label>
+                                    <Form.Control type="text"  id="mobno" placeholder="Mobile Number"/>
+                                 </Form.Group>
+                                 <Form.Group className="col-md-6  form-group">
+                                    <Form.Label htmlFor="altconno">Alternate Contact:</Form.Label>
+                                    <Form.Control type="text"  id="altconno" placeholder="Alternate Contact"/>
+                                 </Form.Group>
+                                 <Form.Group className="col-md-6  form-group">
+                                    <Form.Label htmlFor="email">Email:</Form.Label>
+                                    <Form.Control type="email"  id="email" placeholder="Email"/>
+                                 </Form.Group>
+                                 <Form.Group className="col-md-6 form-group">
+                                    <Form.Label htmlFor="pno">Pin Code:</Form.Label>
+                                    <Form.Control type="text"  id="pno" placeholder="Pin Code"/>
+                                 </Form.Group>
+                                 <Form.Group className="col-md-12 form-group">
+                                    <Form.Label htmlFor="city">Town/City:</Form.Label>
+                                    <Form.Control type="text"  id="city" placeholder="Town/City"/>
+                                 </Form.Group>
+                              </div>
+                              <hr/>
+                              <h5 className="mb-3">Security</h5>
+                              <div className="row">
+                                 <Form.Group className="col-md-12 form-group">
+                                    <Form.Label htmlFor="uname">User Name:</Form.Label>
+                                    <Form.Control type="text"  id="uname" placeholder="User Name"/>
+                                 </Form.Group>
+                                 <Form.Group className="col-md-6 form-group">
+                                    <Form.Label htmlFor="pass">Password:</Form.Label>
+                                    <Form.Control type="password"  id="pass" placeholder="Password"/>
+                                 </Form.Group>
+                                 <Form.Group className="col-md-6 form-group">
+                                    <Form.Label htmlFor="rpass">Repeat Password:</Form.Label>
+                                    <Form.Control type="password"  id="rpass" placeholder="Repeat Password "/>
+                                 </Form.Group>
+                              </div>
+                              <div className="checkbox">
+                                 <label className="form-label"><input type="checkbox" className="me-2 form-check-input"  value="" id="flexCheckChecked"/>Enable Two-Factor-Authentication</label>
+                              </div>
+                              <Button type="button" variant="btn btn-primary">Add New User</Button>
+                           </form>
+                        </div>
+                     </Card.Body>
+                  </Card>
+               </Col>
+            </Row>
+         </div>
+      </>
+  )
 
-                    <div
-                      className="p-field-container"
-                      style={{
-                        display: "flex",
-                        gap: "1rem",
-                        flexWrap: "wrap",
-                      }}>
-                      <div className="p-field" style={{ flex: "1 1 45%" }}>
-                        <Form.Group className="form-group">
-                          <Form.Label htmlFor="exampleInputText1">
-                            Alias Name
-                          </Form.Label>
-                          <Form.Control
-                            type="text"
-                            id="alias"
-                            placeholder="Enter Name"
-                          />
-                        </Form.Group>
-                      </div>
-
-                      <div className="p-field" style={{ flex: "1 1 45%" }}>
-                        <Form.Group className="form-group">
-                          <Form.Label htmlFor="exampleInputEmail3">
-                            Email{" "}
-                          </Form.Label>
-                          <Form.Control
-                            type="email"
-                            id="Email"
-                            placeholder="Enter Email"
-                          />
-                        </Form.Group>
-                      </div>
-                    </div>
-
-                    <div
-                      className="p-field-container"
-                      style={{
-                        display: "flex",
-                        gap: "1rem",
-                        flexWrap: "wrap",
-                      }}>
-                      <div className="p-field" style={{ flex: "1 1 45%" }}>
-                        <Form.Group className="form-group">
-                          <Form.Label> Select Role</Form.Label>
-                          <select className="form-select form-select mb-3 shadow-none">
-                            <option defaultValue>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                          </select>
-                        </Form.Group>
-                      </div>
-
-                      <div className="p-field" style={{ flex: "1 1 45%" }}>
-                        <Form.Group className="form-group">
-                          <Form.Label> Call Type</Form.Label>
-                          <select className="form-select form-select mb-3 shadow-none">
-                            <option defaultValue>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                          </select>
-                        </Form.Group>
-                      </div>
-                    </div>
-
-                    <div
-                      className="p-field-container"
-                      style={{
-                        display: "flex",
-                        gap: "1rem",
-                        flexWrap: "wrap",
-                      }}>
-                      <div className="p-field" style={{ flex: "1 1 45%" }}>
-                        <Form.Group className="form-group">
-                          <Form.Label>Sub Call Type</Form.Label>
-                          <select className="form-select form-select mb-3 shadow-none">
-                            <option defaultValue>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                          </select>
-                        </Form.Group>
-                      </div>
-
-                      <div className="p-field" style={{ flex: "1 1 45%" }}>
-                        <Form.Group className="form-group">
-                          <Form.Label> Common Language</Form.Label>
-                          <select className="form-select form-select mb-3 shadow-none">
-                            <option defaultValue>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                          </select>
-                        </Form.Group>
-                      </div>
-                    </div>
-
-                    <div
-                      className="p-field-container"
-                      style={{
-                        display: "flex",
-                        gap: "1rem",
-                        flexWrap: "wrap",
-                      }}>
-                      <div className="p-field" style={{ flex: "1 1 45%" }}>
-                        <Form.Group className="form-group">
-                          <Form.Label>Country</Form.Label>
-                          <select className="form-select form-select mb-3 shadow-none">
-                            <option defaultValue>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                          </select>
-                        </Form.Group>
-                      </div>
-
-                      <div className="p-field" style={{ flex: "1 1 45%" }}>
-                        <Form.Group className="form-group">
-                          <Form.Label>State</Form.Label>
-                          <select className="form-select form-select mb-3 shadow-none">
-                            <option defaultValue>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                          </select>
-                        </Form.Group>
-                      </div>
-                    </div>
-
-                    <div
-                      className="p-field-container"
-                      style={{
-                        display: "flex",
-                        gap: "1rem",
-                        flexWrap: "wrap",
-                      }}>
-                      <div className="p-field" style={{ flex: "1 1 45%" }}>
-                        <Form.Group className="form-group">
-                          <Form.Label>City</Form.Label>
-                          <select className="form-select form-select mb-3 shadow-none">
-                            <option defaultValue>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                          </select>
-                        </Form.Group>
-                      </div>
-
-                      <div className="p-field" style={{ flex: "1 1 45%" }}>
-                        <Form.Group className="form-group">
-                          <Form.Label>Zip Code</Form.Label>
-                          <Form.Control
-                            type="text"
-                            id="zipCode"
-                            placeholder="Enter Zip Code"
-                          />
-                        </Form.Group>
-                      </div>
-                    </div>
-
-                    <div
-                      className="p-field-container"
-                      style={{
-                        display: "flex",
-                        gap: "1rem",
-                        flexWrap: "wrap",
-                      }}>
-                      <div className="p-field" style={{ flex: "1 1 45%" }}>
-                        <Form.Group className="form-group">
-                          <Form.Label>Phone Number</Form.Label>
-                          <Form.Control
-                            type="tel"
-                            id="phoneNumber"
-                            placeholder="Enter Phone Number"
-                          />
-                        </Form.Group>
-                      </div>
-
-                      <div className="p-field" style={{ flex: "1 1 45%" }}>
-                        <Form.Group className="form-group">
-                          <Form.Label>Extension</Form.Label>
-                          <Form.Control
-                            type="text"
-                            id="extension"
-                            placeholder="Enter Extension"
-                          />
-                        </Form.Group>
-                      </div>
-                    </div>
-
-                    <div
-                      className="p-field-container"
-                      style={{
-                        display: "flex",
-                        gap: "1rem",
-                        flexWrap: "wrap",
-                      }}>
-                      <div className="p-field" style={{ flex: "1 1 45%" }}>
-                        <Form.Group className="form-group">
-                          <Form.Label>Comments</Form.Label>
-                          <Form.Control
-                            as="textarea"
-                            id="comments"
-                            placeholder="Enter Comments"
-                          />
-                        </Form.Group>
-                      </div>
-
-                      <div
-                        className="p-field"
-                        style={{ flex: "1 1 45%" }}></div>
-                    </div>
-
-                    <Button type="submit" className="btn btn-primary btn-block">
-                      Submit
-                    </Button>
-                  </Form>
-                </Card.Body>
-              </Card>
-            </Col>
-          </Row>
-        </Card.Body>
-      </Card>
-    </>
-  );
-};
+}
 
 export default AddAdmin;

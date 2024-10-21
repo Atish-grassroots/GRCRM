@@ -10,7 +10,7 @@ import CustomToggle from '../../../dropdowns'
 // mobile-offcanvas
 import MobildeOffcanvas from '../../components/mobile-offcanvas'
 //Horizontal-nav
-import HorizontalNav from '../HeaderStyle/horizontal-nav'
+import HorizontalNav from './horizontal-nav'
 
 //img 
 import flag1 from '../../../../assets/images/Flag/flag001.png'

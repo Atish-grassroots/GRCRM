@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Card, Col, Row, Table } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 
-const InboundReport = () => {
+const TeamInteractionReport = () => {
     const navigate = useNavigate();
     const Data_table = [
         {
@@ -91,7 +91,7 @@ const InboundReport = () => {
             <Card>
                 <Card.Header className=" pb-1">
                     <div className="d-flex justify-content-between">
-                        <h5 className="mb-0">Inbound Report</h5>
+                        <h5 className="mb-0">Interaction Report</h5>
                         <div className=" justify-content-between">
                             <Button variant="primary" className="m-1">
                                 CSV
@@ -114,6 +114,7 @@ const InboundReport = () => {
                 <Card.Body className="p-0">
                     <Row>
                         <Col sm="12">
+                            <Card>
                                 <Card.Body>
                                     <div className="table-responsive border-bottom my-3">
                                         <Table
@@ -141,7 +142,6 @@ const InboundReport = () => {
                                                         <td>{item.age}</td>
                                                         <td>{item.startdate}</td>
                                                         <td>{item.salary}</td>
-                                                        
                                                     </tr>
                                                 ))}
                                             </tbody>
@@ -253,6 +253,7 @@ const InboundReport = () => {
                                         </Row>
                                     </div>
                                 </Card.Body>
+                            </Card>
                         </Col>
                     </Row>
                 </Card.Body>
@@ -261,4 +262,4 @@ const InboundReport = () => {
     );
 };
 
-export default InboundReport;
+export default TeamInteractionReport;
