@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Card, Col, Row, Table } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 
-const InboundReport = () => {
+const TAdvisorTimeShare = () => {
     const navigate = useNavigate();
     const Data_table = [
         {
@@ -89,9 +89,9 @@ const InboundReport = () => {
     return (
         <>
             <Card>
-                <Card.Header className=" pb-1">
+                <Card.Header className="">
                     <div className="d-flex justify-content-between">
-                        <h5 className="mb-0">Inbound Report</h5>
+                        <h5 className="">Advisor Time Share</h5>
                         <div className=" justify-content-between">
                             <Button variant="primary" className="m-1">
                                 CSV
@@ -111,11 +111,12 @@ const InboundReport = () => {
                         </div>
                     </div>
                 </Card.Header>
-                <Card.Body className="p-0">
+                <Card.Body>
                     <Row>
                         <Col sm="12">
+                            <Card>
                                 <Card.Body>
-                                    <div className="table-responsive border-bottom my-3">
+                                    <div className="table-responsive border-bottom my-1 ">
                                         <Table
                                             responsive
                                             striped
@@ -141,7 +142,6 @@ const InboundReport = () => {
                                                         <td>{item.age}</td>
                                                         <td>{item.startdate}</td>
                                                         <td>{item.salary}</td>
-                                                        
                                                     </tr>
                                                 ))}
                                             </tbody>
@@ -253,6 +253,7 @@ const InboundReport = () => {
                                         </Row>
                                     </div>
                                 </Card.Body>
+                            </Card>
                         </Col>
                     </Row>
                 </Card.Body>
@@ -261,4 +262,4 @@ const InboundReport = () => {
     );
 };
 
-export default InboundReport;
+export default TAdvisorTimeShare;

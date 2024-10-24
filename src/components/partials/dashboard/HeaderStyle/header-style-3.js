@@ -1,5 +1,5 @@
 import React from 'react'
-import HorizontalNav from '../HeaderStyle/horizontal-nav'
+import HorizontalNav from './horizontal-nav'
 import { Navbar,Container,Nav,Dropdown,} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import CustomToggle from '../../../dropdowns'

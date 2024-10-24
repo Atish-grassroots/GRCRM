@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Card, Col, Form, Row, Table } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 
-const AdminList = () => {
+const TUserList = () => {
   const navigate = useNavigate();
   const Data_table = [
     {
@@ -91,10 +91,10 @@ const AdminList = () => {
       <Card>
         <Card.Header>
           <div className="d-flex justify-content-between">
-            <h5 className="mb-0">Admin List</h5>
+            <h5 className="mb-0">User List</h5>
             <Button
               className="ml-auto"
-              onClick={() => navigate("/manager/dashboard/manageadmin")}>
+              onClick={() => navigate("/manager/dashboard/t-manageusers")}>
               Add
             </Button>
           </div>
@@ -108,13 +108,33 @@ const AdminList = () => {
                     <Col className="col-4 d-flex align-items-start">
                       <div className="input-group search-input">
                         <span className="input-group-text" id="search-input">
-                            <svg width="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="11.7669" cy="11.7666" r="8.98856" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></circle>
-                                <path d="M18.0186 18.4851L21.5426 22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
-                            </svg>
+                          <svg
+                            width="18"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <circle
+                              cx="11.7669"
+                              cy="11.7666"
+                              r="8.98856"
+                              stroke="currentColor"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"></circle>
+                            <path
+                              d="M18.0186 18.4851L21.5426 22"
+                              stroke="currentColor"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"></path>
+                          </svg>
                         </span>
-                        <input type="search" className="form-control" placeholder="Search..."/>
-                    </div>
+                        <input
+                          type="search"
+                          className="form-control"
+                          placeholder="Search..."
+                        />
+                      </div>
                     </Col>
                     <Col className="col-4 d-flex align-items-end">
                       <div>
@@ -145,6 +165,7 @@ const AdminList = () => {
                           <th>Start date</th>
                           <th>Salary</th>
                           <th>Action</th>
+
                           <th>Status</th>
                         </tr>
                       </thead>
@@ -157,17 +178,45 @@ const AdminList = () => {
                             <td>{item.age}</td>
                             <td>{item.startdate}</td>
                             <td>{item.salary}</td>
+
                             <td>
                               <div className="flex align-items-center list-user-action">
-                                <Link className="btn btn-sm btn-icon btn-warning" data-toggle="tooltip" data-placement="top" title="Edit" data-original-title="Edit" to="/manager/dashboard/manageadmin">
+                                <Link
+                                  className="btn btn-sm btn-icon btn-warning"
+                                  data-toggle="tooltip"
+                                  data-placement="top"
+                                  title="Edit"
+                                  data-original-title="Edit"
+                                  to="/manager/dashboard/t-manageusers">
                                   <span className="btn-inner">
-                                    <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                      <path d="M11.4925 2.78906H7.75349C4.67849 2.78906 2.75049 4.96606 2.75049 8.04806V16.3621C2.75049 19.4441 4.66949 21.6211 7.75349 21.6211H16.5775C19.6625 21.6211 21.5815 19.4441 21.5815 16.3621V12.3341" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
-                                      <path fillRule="evenodd" clipRule="evenodd" d="M8.82812 10.921L16.3011 3.44799C17.2321 2.51799 18.7411 2.51799 19.6721 3.44799L20.8891 4.66499C21.8201 5.59599 21.8201 7.10599 20.8891 8.03599L13.3801 15.545C12.9731 15.952 12.4211 16.181 11.8451 16.181H8.09912L8.19312 12.401C8.20712 11.845 8.43412 11.315 8.82812 10.921Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
-                                      <path d="M15.1655 4.60254L19.7315 9.16854" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
+                                    <svg
+                                      width="20"
+                                      viewBox="0 0 24 24"
+                                      fill="none"
+                                      xmlns="http://www.w3.org/2000/svg">
+                                      <path
+                                        d="M11.4925 2.78906H7.75349C4.67849 2.78906 2.75049 4.96606 2.75049 8.04806V16.3621C2.75049 19.4441 4.66949 21.6211 7.75349 21.6211H16.5775C19.6625 21.6211 21.5815 19.4441 21.5815 16.3621V12.3341"
+                                        stroke="currentColor"
+                                        strokeWidth="1.5"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"></path>
+                                      <path
+                                        fillRule="evenodd"
+                                        clipRule="evenodd"
+                                        d="M8.82812 10.921L16.3011 3.44799C17.2321 2.51799 18.7411 2.51799 19.6721 3.44799L20.8891 4.66499C21.8201 5.59599 21.8201 7.10599 20.8891 8.03599L13.3801 15.545C12.9731 15.952 12.4211 16.181 11.8451 16.181H8.09912L8.19312 12.401C8.20712 11.845 8.43412 11.315 8.82812 10.921Z"
+                                        stroke="currentColor"
+                                        strokeWidth="1.5"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"></path>
+                                      <path
+                                        d="M15.1655 4.60254L19.7315 9.16854"
+                                        stroke="currentColor"
+                                        strokeWidth="1.5"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"></path>
                                     </svg>
                                   </span>
-                                </Link>{' '}
+                                </Link>{" "}
                               </div>
                             </td>
                             <td>
@@ -302,4 +351,4 @@ const AdminList = () => {
   );
 };
 
-export default AdminList;
+export default TUserList;

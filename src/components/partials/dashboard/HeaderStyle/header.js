@@ -383,14 +383,14 @@ const Header = memo((props) => {
                                 <Dropdown.Menu
                                     className="dropdown-menu-end"
                                     aria-labelledby="navbarDropdown">
-                                    <Dropdown.Item href="https://templates.iqonic.design/hope-ui/react/build/dashboard/app/user-profile">
+                                    <Dropdown.Item href="">
                                         Profile
                                     </Dropdown.Item>
-                                    <Dropdown.Item href="https://templates.iqonic.design/hope-ui/react/build/dashboard/app/user-privacy-setting">
+                                    <Dropdown.Item href="">
                                         Privacy Setting
                                     </Dropdown.Item>
                                     <Dropdown.Divider />
-                                    <Dropdown.Item href="https://templates.iqonic.design/hope-ui/react/build/auth/sign-in">
+                                    <Dropdown.Item href="/">
                                         Logout
                                     </Dropdown.Item>
                                 </Dropdown.Menu>
