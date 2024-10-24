@@ -1,13 +1,36 @@
-import React from "react";
-import { Row, Col, Image, Form, Button, ListGroup } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Row, Col, Image, Form, Button, Dropdown } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import Card from "../components/Card";
 
 // img
 import auth1 from "../assets/images/auth/01.png";
+import useSuperAdminApis from "../SuperAdmin/hook";
 
 const SignIn = () => {
   const navigate = useNavigate();
+  const [{ getProcessName }] = useSuperAdminApis();
+  const [process, setProcess] = useState([]);
+
+  const getProcessList = async () => {
+    try {
+      const response = await getProcessName();
+      if (response) {
+        setProcess(response.data.message);
+      } else {
+        console.log("Error fetching process details:", response.message);
+      }
+    } catch (error) {
+      console.log("Error fetching process details:", error.message);
+    }
+  };
+
+  useEffect(() => {
+    getProcessList();
+  }, []);
+
+  const [selectedProcessName, setSelectedProcessName] = useState("");
+
   return (
     <>
       <section className="login-content">
@@ -34,11 +57,21 @@ const SignIn = () => {
                             <Form.Label htmlFor="pname" className="">
                               Process Name
                             </Form.Label>
-                            <Form.Control
-                              type="text"
-                              className=""
-                              id="pname"
-                            />
+                            <select
+                              className="form-select"
+                              data-trigger
+                              name="choices-single-default"
+                              id="choices-single-default"
+                              onChange={(e) =>
+                                setSelectedProcessName(e.target.value)
+                              }>
+                              <option value="">Select a process</option>
+                              {process.map((item) => (
+                                <option key={item._id} value={item.ProcessName}>
+                                  {item.ProcessName}
+                                </option>
+                              ))}
+                            </select>
                           </Form.Group>
                         </Col>
                         <Col lg="12">
