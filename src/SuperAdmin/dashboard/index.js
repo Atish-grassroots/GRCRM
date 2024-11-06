@@ -10,7 +10,14 @@ const Index = () => {
   const [showModal, setShowModal] = useState(false);
   const [processlist, setAllProcess] = useState([]);
   const [update, setUpdate] = useState(false);
-  const [{ addProcessDetails, updateProcessDetails, getProcessDetails }] = useSuperAdminApis();
+  const [
+    {
+      addProcessDetails,
+      updateProcessDetails,
+      getProcessDetails,
+      connectProcessDB,
+    },
+  ] = useSuperAdminApis();
 
   const [processDetails, setProcessDetails] = useState({
     processName: "",
@@ -30,7 +37,7 @@ const Index = () => {
     pState: "",
     country: "",
   });
-  
+
   const handleShowModal = () => {
     setUpdate(false);
     setShowModal(true);
@@ -41,7 +48,6 @@ const Index = () => {
     setShowModal(true);
     setUpdate(true);
 
-    // const response = await getProcessDetails(pName);
     getProcessDetails(pName)
       .then((processDetail) => {
         setProcessID(processDetail?.data?.message[0]?._id);
@@ -75,10 +81,6 @@ const Index = () => {
     setUpdate(false);
     getAllProcessDetails();
     setShowModal(false);
-  };
-
-  const handleGetStarted = () => {
-    navigate("/manager");
   };
 
   const handleAddProcess = async () => {
@@ -143,7 +145,7 @@ const Index = () => {
       const response = await updateProcessDetails(data);
       if (response) {
         setProcessDetails(response.data);
-        toast.success("Process Update successfully!");
+        toast.success("Process Updated successfully!");
         handleCloseModal();
         getAllProcessDetails();
         setProcessDetails([]);
@@ -170,6 +172,28 @@ const Index = () => {
     }
   };
 
+  const handleGetStarted = async (dbName, dbServer) => {
+    const data = {
+      ProcessDbName: dbName,
+      DBServer: dbServer,
+    };
+
+    try {
+      const response = await connectProcessDB(data);
+      if (response) {
+        setProcessDetails(response.data);
+        toast.success("Process Updated successfully!");
+        navigate("/manager");
+      } else {
+        console.log("Error updating process:", response.message);
+        toast.error("Error updating process!");
+      }
+    } catch (error) {
+      console.log("Error updating process:", error.message);
+      toast.error("Error updating process!");
+    }
+  };
+
   useEffect(() => {
     getAllProcessDetails();
   }, []);
@@ -193,7 +217,7 @@ const Index = () => {
       <Row>
         <Col md="12">
           <Row className=" row-cols-1 row-cols-md-2 row-cols-lg-4 mb-3 text-center">
-            {processlist.map((process) => (
+            {processlist?.map((process) => (
               <Col>
                 <Card className=" mb-4 rounded-3 ">
                   <Card.Body>
@@ -228,7 +252,12 @@ const Index = () => {
                       <button
                         type="button"
                         className="btn btn-primary"
-                        onClick={handleGetStarted}>
+                        onClick={() => {
+                          handleGetStarted(
+                            process.ProcessDbName,
+                            process.DBServer
+                          );
+                        }}>
                         Get Started
                       </button>
                       <button

@@ -13,11 +13,17 @@ import SignIn from "./auth/sign-in";
 // import Index from "./SuperAdmin/index";
 // import { SimpleRouter } from "./router/simple-router";
 import { DefaultRouter } from "./router/default-router";
+import Recoverpw from "./auth/recoverpw";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <SignIn />,
+  },
+
+  {
+    path: "auth/recoverpw",
+    element: <Recoverpw />,
   },
   ...DefaultRouter,
   // ...SimpleRouter

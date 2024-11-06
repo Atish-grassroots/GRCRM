@@ -50,12 +50,13 @@ const useSuperAdminApis = () => {
     }
   };
 
-  const getProcessName = async () => {
+  const connectProcessDB = async (data) => {
     try {
       const response = await relayService({
-        url: `/ProcessMaster/getProcessName`,
-        method: "GET",
+        url: `/Process/connectprocessdb`,
+        method: "POST",
         headers: { "Content-Type": "application/json" },
+        data: data,
       });
       if (response) {
         return response;
@@ -70,7 +71,7 @@ const useSuperAdminApis = () => {
       addProcessDetails,
       updateProcessDetails,
       getProcessDetails,
-      getProcessName,
+      connectProcessDB,
     },
   ];
 };
