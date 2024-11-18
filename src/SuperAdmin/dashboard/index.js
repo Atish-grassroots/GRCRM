@@ -10,6 +10,7 @@ const Index = () => {
   const [showModal, setShowModal] = useState(false);
   const [processlist, setAllProcess] = useState([]);
   const [update, setUpdate] = useState(false);
+  const [processID, setProcessID] = useState(null);
   const [
     {
       addProcessDetails,
@@ -43,7 +44,6 @@ const Index = () => {
     setShowModal(true);
   };
 
-  const [processID, setProcessID] = useState(null);
   const handleShowUpdateModal = async (pName) => {
     setShowModal(true);
     setUpdate(true);
@@ -76,6 +76,7 @@ const Index = () => {
         console.error("Error fetching process details:", error);
       });
   };
+
   const handleCloseModal = () => {
     setProcessDetails([]);
     setUpdate(false);
@@ -196,6 +197,14 @@ const Index = () => {
 
   useEffect(() => {
     getAllProcessDetails();
+  }, []);
+
+  useEffect(() => {
+    const data = {
+      ProcessDbName: "GRSuperAdmin",
+      DBServer: "localhost",
+    };
+    connectProcessDB(data);
   }, []);
 
   return (
